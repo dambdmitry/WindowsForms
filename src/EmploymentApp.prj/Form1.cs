@@ -13,7 +13,7 @@ namespace EmploymentApp
 {
 	public partial class Form1 : Form
 	{
-		private int countRows = 0;
+		private int countRows = 0; //Для перехода на новую строку в таблице.
 		public Form1()
 		{
 			InitializeComponent();
@@ -62,7 +62,7 @@ namespace EmploymentApp
 
 		private void _chk_CheckedChanged(object sender, EventArgs e)
 		{
-			if(_chkEnglishProficiency.Checked == true)
+			if(_chkEnglishProficiency.Checked)
 			{
 				_txtLevelEnglish.Enabled = true;
 				_cmbLevelEnglish.Enabled = true;
@@ -74,7 +74,7 @@ namespace EmploymentApp
 				_cmbLevelEnglish.Enabled = false;
 			}
 
-			if(_chkHighEducation.Checked == true)
+			if(_chkHighEducation.Checked)
 			{
 				_txtScopeEducation.Enabled = true;
 				_cmbScopeEducation.Enabled = true;
@@ -86,7 +86,7 @@ namespace EmploymentApp
 				_cmbScopeEducation.Enabled = false;
 			}
 
-			if(_chkExperience.Checked == true)
+			if(_chkExperience.Checked)
 			{
 				_txtHowMuchExp.Enabled = true;
 				_cmbHowMuchExp.Enabled = true;
@@ -144,7 +144,7 @@ namespace EmploymentApp
 					dataGridView[2, countRows].Value = _rdiFemale.Checked ? "Женский" : "Мужской";
 					dataGridView[3, countRows].Value = _cmbLevelEnglish.SelectedItem == null ? "-" : _cmbLevelEnglish.SelectedItem.ToString();
 					dataGridView[4, countRows].Value = _cmbScopeEducation.SelectedItem == null ? "-" : _cmbScopeEducation.SelectedItem.ToString();
-					dataGridView[5, countRows].Value = _cmbHowMuchExp.SelectedItem == null ? "-" : _cmbHowMuchExp.SelectedItem.ToString();
+					dataGridView[5, countRows].Value = _cmbHowMuchExp.SelectedItem == null ? "Без опыта" : _cmbHowMuchExp.SelectedItem.ToString();
 					dataGridView[6, countRows].Value = _cmbPosition.SelectedItem.ToString();
 
 					countRows++;
