@@ -65,8 +65,6 @@ namespace EmploymentApp
 		/// При (.Checked == true) открывает доступ к соответствующим comboBox'ам 
 		/// В ином случае закрывает их и обнуляет значения в comboBox.
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void _chk_CheckedChanged(object sender, EventArgs e)
 		{
 			if(_chkEnglishProficiency.Checked)
@@ -109,8 +107,6 @@ namespace EmploymentApp
 		/// Метод производит проверку на заполнение полей, обязательных для ввода(в т.ч. и компетенций если они отмечены в checkBox'е)
 		/// После проверки в блоке "else" метод добавляет в таблицу данные, введенные пользователем.
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void _btnSave_Click(object sender, EventArgs e)
 		{
 			if(_txtEnterLastName.Text == "")
@@ -165,8 +161,6 @@ namespace EmploymentApp
 		/// <summary>
 		/// В поле "Фамилия" защищаемся от ввода некорректных символов.
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void _txtEnterLastName_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if(!Char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
@@ -177,8 +171,6 @@ namespace EmploymentApp
 		/// <summary>
 		/// Аналогично методу "_txtEnterLastName_KeyPress", только с полем "Имя".
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void _txtEnterName_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if(!Char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
