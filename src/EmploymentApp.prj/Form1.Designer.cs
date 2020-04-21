@@ -36,21 +36,21 @@
 			this._txtSex = new System.Windows.Forms.Label();
 			this._rdiFemale = new System.Windows.Forms.RadioButton();
 			this._grpInfo = new System.Windows.Forms.GroupBox();
-			this._txtPosition = new System.Windows.Forms.Label();
-			this._cmbHowMuchExp = new System.Windows.Forms.ComboBox();
-			this._cmbScopeEducation = new System.Windows.Forms.ComboBox();
-			this._cmbLevelEnglish = new System.Windows.Forms.ComboBox();
-			this._txtScopeEducation = new System.Windows.Forms.Label();
-			this._txtHowMuchExp = new System.Windows.Forms.Label();
-			this._txtLevelEnglish = new System.Windows.Forms.Label();
+			this._btnSave = new System.Windows.Forms.Button();
+			this._cmbPosition = new System.Windows.Forms.ComboBox();
 			this._chkExperience = new System.Windows.Forms.CheckBox();
+			this._txtPosition = new System.Windows.Forms.Label();
 			this._chkHighEducation = new System.Windows.Forms.CheckBox();
 			this._chkEnglishProficiency = new System.Windows.Forms.CheckBox();
+			this._txtLevelEnglish = new System.Windows.Forms.Label();
 			this._txtExperience = new System.Windows.Forms.Label();
+			this._cmbHowMuchExp = new System.Windows.Forms.ComboBox();
 			this._txtHighEducation = new System.Windows.Forms.Label();
+			this._txtHowMuchExp = new System.Windows.Forms.Label();
 			this._txtEnglishProficiency = new System.Windows.Forms.Label();
-			this._cmbPosition = new System.Windows.Forms.ComboBox();
-			this._btnSave = new System.Windows.Forms.Button();
+			this._cmbScopeEducation = new System.Windows.Forms.ComboBox();
+			this._txtScopeEducation = new System.Windows.Forms.Label();
+			this._cmbLevelEnglish = new System.Windows.Forms.ComboBox();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this._grpInfo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -159,72 +159,24 @@
 			this._grpInfo.TabIndex = 7;
 			this._grpInfo.TabStop = false;
 			// 
-			// _txtPosition
+			// _btnSave
 			// 
-			this._txtPosition.AutoSize = true;
-			this._txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._txtPosition.Location = new System.Drawing.Point(6, 114);
-			this._txtPosition.Name = "_txtPosition";
-			this._txtPosition.Size = new System.Drawing.Size(112, 24);
-			this._txtPosition.TabIndex = 19;
-			this._txtPosition.Text = "Должность";
+			this._btnSave.Location = new System.Drawing.Point(716, 114);
+			this._btnSave.Name = "_btnSave";
+			this._btnSave.Size = new System.Drawing.Size(75, 23);
+			this._btnSave.TabIndex = 21;
+			this._btnSave.Text = "Готово";
+			this._btnSave.UseVisualStyleBackColor = true;
+			this._btnSave.Click += new System.EventHandler(this._btnSave_Click);
 			// 
-			// _cmbHowMuchExp
+			// _cmbPosition
 			// 
-			this._cmbHowMuchExp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this._cmbHowMuchExp.FormattingEnabled = true;
-			this._cmbHowMuchExp.Location = new System.Drawing.Point(704, 72);
-			this._cmbHowMuchExp.Name = "_cmbHowMuchExp";
-			this._cmbHowMuchExp.Size = new System.Drawing.Size(87, 21);
-			this._cmbHowMuchExp.TabIndex = 18;
-			// 
-			// _cmbScopeEducation
-			// 
-			this._cmbScopeEducation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this._cmbScopeEducation.FormattingEnabled = true;
-			this._cmbScopeEducation.Location = new System.Drawing.Point(704, 48);
-			this._cmbScopeEducation.Name = "_cmbScopeEducation";
-			this._cmbScopeEducation.Size = new System.Drawing.Size(87, 21);
-			this._cmbScopeEducation.TabIndex = 17;
-			// 
-			// _cmbLevelEnglish
-			// 
-			this._cmbLevelEnglish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this._cmbLevelEnglish.FormattingEnabled = true;
-			this._cmbLevelEnglish.Location = new System.Drawing.Point(704, 24);
-			this._cmbLevelEnglish.Name = "_cmbLevelEnglish";
-			this._cmbLevelEnglish.Size = new System.Drawing.Size(87, 21);
-			this._cmbLevelEnglish.TabIndex = 16;
-			// 
-			// _txtScopeEducation
-			// 
-			this._txtScopeEducation.AutoSize = true;
-			this._txtScopeEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._txtScopeEducation.Location = new System.Drawing.Point(491, 43);
-			this._txtScopeEducation.Name = "_txtScopeEducation";
-			this._txtScopeEducation.Size = new System.Drawing.Size(207, 24);
-			this._txtScopeEducation.TabIndex = 15;
-			this._txtScopeEducation.Text = "              Образование:";
-			// 
-			// _txtHowMuchExp
-			// 
-			this._txtHowMuchExp.AutoSize = true;
-			this._txtHowMuchExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._txtHowMuchExp.Location = new System.Drawing.Point(491, 67);
-			this._txtHowMuchExp.Name = "_txtHowMuchExp";
-			this._txtHowMuchExp.Size = new System.Drawing.Size(209, 24);
-			this._txtHowMuchExp.TabIndex = 14;
-			this._txtHowMuchExp.Text = "                             Опыт:";
-			// 
-			// _txtLevelEnglish
-			// 
-			this._txtLevelEnglish.AutoSize = true;
-			this._txtLevelEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._txtLevelEnglish.Location = new System.Drawing.Point(491, 19);
-			this._txtLevelEnglish.Name = "_txtLevelEnglish";
-			this._txtLevelEnglish.Size = new System.Drawing.Size(210, 24);
-			this._txtLevelEnglish.TabIndex = 13;
-			this._txtLevelEnglish.Text = "Уровень английского:";
+			this._cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._cmbPosition.FormattingEnabled = true;
+			this._cmbPosition.Location = new System.Drawing.Point(124, 117);
+			this._cmbPosition.Name = "_cmbPosition";
+			this._cmbPosition.Size = new System.Drawing.Size(176, 21);
+			this._cmbPosition.TabIndex = 20;
 			// 
 			// _chkExperience
 			// 
@@ -234,6 +186,16 @@
 			this._chkExperience.Size = new System.Drawing.Size(15, 14);
 			this._chkExperience.TabIndex = 12;
 			this._chkExperience.UseVisualStyleBackColor = true;
+			// 
+			// _txtPosition
+			// 
+			this._txtPosition.AutoSize = true;
+			this._txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._txtPosition.Location = new System.Drawing.Point(6, 114);
+			this._txtPosition.Name = "_txtPosition";
+			this._txtPosition.Size = new System.Drawing.Size(112, 24);
+			this._txtPosition.TabIndex = 19;
+			this._txtPosition.Text = "Должность";
 			// 
 			// _chkHighEducation
 			// 
@@ -253,6 +215,16 @@
 			this._chkEnglishProficiency.TabIndex = 10;
 			this._chkEnglishProficiency.UseVisualStyleBackColor = true;
 			// 
+			// _txtLevelEnglish
+			// 
+			this._txtLevelEnglish.AutoSize = true;
+			this._txtLevelEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._txtLevelEnglish.Location = new System.Drawing.Point(491, 19);
+			this._txtLevelEnglish.Name = "_txtLevelEnglish";
+			this._txtLevelEnglish.Size = new System.Drawing.Size(210, 24);
+			this._txtLevelEnglish.TabIndex = 13;
+			this._txtLevelEnglish.Text = "Уровень английского:";
+			// 
 			// _txtExperience
 			// 
 			this._txtExperience.AutoSize = true;
@@ -262,6 +234,15 @@
 			this._txtExperience.Size = new System.Drawing.Size(195, 24);
 			this._txtExperience.TabIndex = 9;
 			this._txtExperience.Text = "Опыт на должности:";
+			// 
+			// _cmbHowMuchExp
+			// 
+			this._cmbHowMuchExp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._cmbHowMuchExp.FormattingEnabled = true;
+			this._cmbHowMuchExp.Location = new System.Drawing.Point(704, 72);
+			this._cmbHowMuchExp.Name = "_cmbHowMuchExp";
+			this._cmbHowMuchExp.Size = new System.Drawing.Size(87, 21);
+			this._cmbHowMuchExp.TabIndex = 18;
 			// 
 			// _txtHighEducation
 			// 
@@ -273,6 +254,16 @@
 			this._txtHighEducation.TabIndex = 8;
 			this._txtHighEducation.Text = "Высшее образование:";
 			// 
+			// _txtHowMuchExp
+			// 
+			this._txtHowMuchExp.AutoSize = true;
+			this._txtHowMuchExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._txtHowMuchExp.Location = new System.Drawing.Point(491, 67);
+			this._txtHowMuchExp.Name = "_txtHowMuchExp";
+			this._txtHowMuchExp.Size = new System.Drawing.Size(209, 24);
+			this._txtHowMuchExp.TabIndex = 14;
+			this._txtHowMuchExp.Text = "                             Опыт:";
+			// 
 			// _txtEnglishProficiency
 			// 
 			this._txtEnglishProficiency.AutoSize = true;
@@ -283,24 +274,33 @@
 			this._txtEnglishProficiency.TabIndex = 7;
 			this._txtEnglishProficiency.Text = "Знание английского:";
 			// 
-			// _cmbPosition
+			// _cmbScopeEducation
 			// 
-			this._cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this._cmbPosition.FormattingEnabled = true;
-			this._cmbPosition.Location = new System.Drawing.Point(124, 117);
-			this._cmbPosition.Name = "_cmbPosition";
-			this._cmbPosition.Size = new System.Drawing.Size(176, 21);
-			this._cmbPosition.TabIndex = 20;
+			this._cmbScopeEducation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._cmbScopeEducation.FormattingEnabled = true;
+			this._cmbScopeEducation.Location = new System.Drawing.Point(704, 48);
+			this._cmbScopeEducation.Name = "_cmbScopeEducation";
+			this._cmbScopeEducation.Size = new System.Drawing.Size(87, 21);
+			this._cmbScopeEducation.TabIndex = 17;
 			// 
-			// _btnSave
+			// _txtScopeEducation
 			// 
-			this._btnSave.Location = new System.Drawing.Point(716, 114);
-			this._btnSave.Name = "_btnSave";
-			this._btnSave.Size = new System.Drawing.Size(75, 23);
-			this._btnSave.TabIndex = 21;
-			this._btnSave.Text = "Готово";
-			this._btnSave.UseVisualStyleBackColor = true;
-			this._btnSave.Click += new System.EventHandler(this._btnSave_Click);
+			this._txtScopeEducation.AutoSize = true;
+			this._txtScopeEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._txtScopeEducation.Location = new System.Drawing.Point(491, 43);
+			this._txtScopeEducation.Name = "_txtScopeEducation";
+			this._txtScopeEducation.Size = new System.Drawing.Size(207, 24);
+			this._txtScopeEducation.TabIndex = 15;
+			this._txtScopeEducation.Text = "              Образование:";
+			// 
+			// _cmbLevelEnglish
+			// 
+			this._cmbLevelEnglish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._cmbLevelEnglish.FormattingEnabled = true;
+			this._cmbLevelEnglish.Location = new System.Drawing.Point(704, 24);
+			this._cmbLevelEnglish.Name = "_cmbLevelEnglish";
+			this._cmbLevelEnglish.Size = new System.Drawing.Size(87, 21);
+			this._cmbLevelEnglish.TabIndex = 16;
 			// 
 			// dataGridView
 			// 

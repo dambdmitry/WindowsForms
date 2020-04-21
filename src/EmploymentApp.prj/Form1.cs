@@ -110,7 +110,7 @@ namespace EmploymentApp
 			{
 				MessageBox.Show("'Имя' - обязательное поле для ввода", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
-			else if(_rdiFemale.Checked == false && _rdiMale.Checked == false)
+			else if(!_rdiFemale.Checked && !_rdiMale.Checked)
 			{
 				MessageBox.Show("'Пол' - обязательное поле для ввода", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
@@ -118,22 +118,22 @@ namespace EmploymentApp
 			{
 				MessageBox.Show("'Должность' - обязательное поле для ввода", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
-			else if(_cmbLevelEnglish.Enabled == true && _cmbLevelEnglish.SelectedItem == null)
+			else if(_cmbLevelEnglish.Enabled && _cmbLevelEnglish.SelectedItem == null) 
 			{
 				MessageBox.Show("Укажите уровень владения выбранных вами компетенций", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
-			else if(_cmbScopeEducation.Enabled == true && _cmbScopeEducation.SelectedItem == null)
+			else if(_cmbScopeEducation.Enabled && _cmbScopeEducation.SelectedItem == null)
 			{
 				MessageBox.Show("Укажите уровень владения выбранных вами компетенций", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
-			else if(_cmbHowMuchExp.Enabled == true && _cmbHowMuchExp.SelectedItem == null)
+			else if(_cmbHowMuchExp.Enabled && _cmbHowMuchExp.SelectedItem == null)
 			{
 				MessageBox.Show("Укажите уровень владения выбранных вами компетенций", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 			// Если все нужные поля заполнены.
 			else
 			{
-				var result = MessageBox.Show("Сохранить данные?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				var result = MessageBox.Show("Сохранить данные?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question); // Для следующей проверки какую кнопку нажмет пользователь.
 
 				if(result == DialogResult.Yes)
 				{
@@ -141,7 +141,7 @@ namespace EmploymentApp
 
 					dataGridView[0, countRows].Value = _txtEnterName.Text;
 					dataGridView[1, countRows].Value = _txtEnterLastName.Text;
-					dataGridView[2, countRows].Value = _rdiFemale.Checked == true ? "Женский" : "Мужской";
+					dataGridView[2, countRows].Value = _rdiFemale.Checked ? "Женский" : "Мужской";
 					dataGridView[3, countRows].Value = _cmbLevelEnglish.SelectedItem == null ? "-" : _cmbLevelEnglish.SelectedItem.ToString();
 					dataGridView[4, countRows].Value = _cmbScopeEducation.SelectedItem == null ? "-" : _cmbScopeEducation.SelectedItem.ToString();
 					dataGridView[5, countRows].Value = _cmbHowMuchExp.SelectedItem == null ? "-" : _cmbHowMuchExp.SelectedItem.ToString();
