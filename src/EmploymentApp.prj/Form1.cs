@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace EmploymentApp
 {
-	public partial class Form1 : Form
+	public partial class MainForm : Form
 	{
-		private int countRows = 0; //Для перехода на новую строку в таблице.
-		public Form1()
+		private int _countRows = 0; //Для перехода на новую строку в таблице.
+		public MainForm()
 		{
 			InitializeComponent();
 
@@ -27,6 +27,7 @@ namespace EmploymentApp
 			_txtHowMuchExp.Enabled = false;
 			_cmbHowMuchExp.Enabled = false;
 
+			//Заполнение comboBox'ов.
 			_cmbLevelEnglish.Items.AddRange(new string[] { "Elementary", "Pre-Intermediate", "Intermediate", "Upper Intermediate", "Advanced", "Mastery" });
 			_cmbScopeEducation.Items.AddRange(new string[] { "IT", "Техническое", "Гуманитарное", "Менеджмент"});
 			_cmbHowMuchExp.Items.AddRange(new string[] {"Более 6 мес.", "Более года", "Более 3-х лет", "Более 5-ти лет" });
@@ -55,11 +56,17 @@ namespace EmploymentApp
 			expCol.Name = "Опыт на должности";
 			positionCol.Name = "Должность";
 
-			dataGridView.Columns.AddRange(new DataGridViewTextBoxColumn[] {nameCol, lastNameCol, sexCol, englishCol, educationCol, expCol, positionCol });
+			_dataGridView.Columns.AddRange(new DataGridViewTextBoxColumn[] {nameCol, lastNameCol, sexCol, englishCol, educationCol, expCol, positionCol });
 
 			
 		}
-
+		/// <summary>
+		/// Метод выполняет проверку в checkBox'ах 
+		/// При (.Checked == true) открывает доступ к соответствующим comboBox'ам 
+		/// В ином случае закрывает их и обнуляет значения в comboBox.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void _chk_CheckedChanged(object sender, EventArgs e)
 		{
 			if(_chkEnglishProficiency.Checked)
@@ -98,10 +105,14 @@ namespace EmploymentApp
 				_cmbHowMuchExp.Enabled = false;
 			}
 		}
-
+		/// <summary>
+		/// Метод производит проверку на заполнение полей, обязательных для ввода(в т.ч. и компетенций если они отмечены в checkBox'е)
+		/// После проверки в блоке "else" метод добавляет в таблицу данные, введенные пользователем.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void _btnSave_Click(object sender, EventArgs e)
 		{
-			//Проверка на заполнение важных полей.
 			if(_txtEnterLastName.Text == "")
 			{
 				MessageBox.Show("'Фамилия' - обязательное поле для ввода", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -130,29 +141,32 @@ namespace EmploymentApp
 			{
 				MessageBox.Show("Укажите уровень владения выбранных вами компетенций", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
-			// Если все нужные поля заполнены.
 			else
 			{
 				var result = MessageBox.Show("Сохранить данные?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question); // Для следующей проверки какую кнопку нажмет пользователь.
 
 				if(result == DialogResult.Yes)
 				{
-					dataGridView.Rows.Add();
+					_dataGridView.Rows.Add();
 
-					dataGridView[0, countRows].Value = _txtEnterName.Text;
-					dataGridView[1, countRows].Value = _txtEnterLastName.Text;
-					dataGridView[2, countRows].Value = _rdiFemale.Checked ? "Женский" : "Мужской";
-					dataGridView[3, countRows].Value = _cmbLevelEnglish.SelectedItem == null ? "-" : _cmbLevelEnglish.SelectedItem.ToString();
-					dataGridView[4, countRows].Value = _cmbScopeEducation.SelectedItem == null ? "-" : _cmbScopeEducation.SelectedItem.ToString();
-					dataGridView[5, countRows].Value = _cmbHowMuchExp.SelectedItem == null ? "Без опыта" : _cmbHowMuchExp.SelectedItem.ToString();
-					dataGridView[6, countRows].Value = _cmbPosition.SelectedItem.ToString();
+					_dataGridView[0, _countRows].Value = _txtEnterName.Text;
+					_dataGridView[1, _countRows].Value = _txtEnterLastName.Text;
+					_dataGridView[2, _countRows].Value = _rdiFemale.Checked ? "Женский" : "Мужской";
+					_dataGridView[3, _countRows].Value = _cmbLevelEnglish.SelectedItem == null ? "-" : _cmbLevelEnglish.SelectedItem.ToString();
+					_dataGridView[4, _countRows].Value = _cmbScopeEducation.SelectedItem == null ? "-" : _cmbScopeEducation.SelectedItem.ToString();
+					_dataGridView[5, _countRows].Value = _cmbHowMuchExp.SelectedItem == null ? "Без опыта" : _cmbHowMuchExp.SelectedItem.ToString();
+					_dataGridView[6, _countRows].Value = _cmbPosition.SelectedItem.ToString();
 
-					countRows++;
+					_countRows++;
 				}
 			}
 
 		}
-
+		/// <summary>
+		/// В поле "Фамилия" защищаемся от ввода некорректных символов.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void _txtEnterLastName_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if(!Char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
@@ -160,7 +174,11 @@ namespace EmploymentApp
 				e.Handled = true;
 			}
 		}
-
+		/// <summary>
+		/// Аналогично методу "_txtEnterLastName_KeyPress", только с полем "Имя".
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void _txtEnterName_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if(!Char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 127)
@@ -169,5 +187,7 @@ namespace EmploymentApp
 			}
 
 		}
+
+	
 	}
 }

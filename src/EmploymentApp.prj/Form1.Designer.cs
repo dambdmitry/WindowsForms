@@ -1,6 +1,6 @@
 ﻿namespace EmploymentApp
 {
-	partial class Form1
+	partial class MainForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -51,9 +51,9 @@
 			this._cmbScopeEducation = new System.Windows.Forms.ComboBox();
 			this._txtScopeEducation = new System.Windows.Forms.Label();
 			this._cmbLevelEnglish = new System.Windows.Forms.ComboBox();
-			this.dataGridView = new System.Windows.Forms.DataGridView();
+			this._dataGridView = new System.Windows.Forms.DataGridView();
 			this._grpInfo.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// _txtLastName
@@ -158,6 +158,7 @@
 			this._grpInfo.Size = new System.Drawing.Size(804, 155);
 			this._grpInfo.TabIndex = 7;
 			this._grpInfo.TabStop = false;
+			this._grpInfo.Text = "Анкета";
 			// 
 			// _btnSave
 			// 
@@ -302,26 +303,26 @@
 			this._cmbLevelEnglish.Size = new System.Drawing.Size(87, 21);
 			this._cmbLevelEnglish.TabIndex = 16;
 			// 
-			// dataGridView
+			// _dataGridView
 			// 
-			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView.Location = new System.Drawing.Point(9, 173);
-			this.dataGridView.Name = "dataGridView";
-			this.dataGridView.Size = new System.Drawing.Size(781, 215);
-			this.dataGridView.TabIndex = 8;
+			this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this._dataGridView.Location = new System.Drawing.Point(9, 173);
+			this._dataGridView.Name = "_dataGridView";
+			this._dataGridView.Size = new System.Drawing.Size(781, 215);
+			this._dataGridView.TabIndex = 8;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.dataGridView);
+			this.Controls.Add(this._dataGridView);
 			this.Controls.Add(this._grpInfo);
 			this.Name = "Form1";
 			this.Text = "Трудоустройство";
 			this._grpInfo.ResumeLayout(false);
 			this._grpInfo.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -351,7 +352,7 @@
 		private System.Windows.Forms.Label _txtPosition;
 		private System.Windows.Forms.ComboBox _cmbPosition;
 		private System.Windows.Forms.Button _btnSave;
-		private System.Windows.Forms.DataGridView dataGridView;
+		private System.Windows.Forms.DataGridView _dataGridView;
 	}
 }
 
